@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>nth-child.scss Demo</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+<a class="fork" href="https://github.com/jamesblanksby" target="_blank"><img src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+<div id="hero">
+	<div id="particles"></div>
+	<div class="content">
+		<h1>nth-child.scss</h1>
+		<p>nth-child.scss is a selection of helpful <span class="mono">:nth-child</span> recipes that makes writing code faster and more readable.</p>
+		<a class="button download" href="https://raw.githubusercontent.com/jamesblanksby/nth-child.scss/master/nth-child.scss" target="_blank">
+			Download <span class="mono">(2Kb)</span>
+		</a>
+		<a class="button github" href="https://github.com/jamesblanksby/nth-child.scss" target="_blank">View on Github</a>
+	</div>	
+</div>
+
+<main>
+
+<!-- usage -->
+<article id="usage" data-name="Usage">
+	<div class="item" data-name="Input">
+		<code>
+			div a {<br>
+			&nbsp;&nbsp;<span class="param">background-color</span>: <span class="value">grey</span>;<br><br>
+			&nbsp;&nbsp;<span class="param">@include</span> first(<span class="value">3</span>) {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">background-color</span>: <span class="value">red</span>;<br>
+				
+			&nbsp;&nbsp;}<br>
+			}
+		</code>
+	</div>
+	<div class="item" data-name="Output">
+		<code>
+			div a {<br>
+			&nbsp;&nbsp;<span class="param">background-color</span>: <span class="value">grey</span>;<br>
+			}<br><br>
+			div a:nth-child(-n + <span class="value">3</span>) {<br>
+			&nbsp;&nbsp;<span class="param">background-color</span>: <span class="value">red</span>;<br>
+			}
+		</code>
+	</div>
+</article>
+
+<!-- first-->
+<article id="first" data-name="first">
+	<code>
+		<span class="comment">// [int] index of the child to select.</span>
+		<br><br>
+		<span class="param">@include</span> 
+		first(<span class="value">3</span>) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- last -->
+<article id="last" data-name="last">
+	<code>
+		<span class="comment">// [int] index of the child to select.</span>
+		<br><br>
+		<span class="param">@include</span> 
+		last(<span class="value">3</span>) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- first last -->
+<article id="first-last" data-name="first last">
+	<code>
+		<span class="param">@include</span> 
+		first-last() 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- every -->
+<article id="every" data-name="every">
+	<code>
+		<span class="comment">// [int] element multiple to select.</span>
+		<br><br>
+		<span class="param">@include</span> 
+		every(<span class="value">3</span>) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- row first -->
+<article id="row-first" data-name="row first">
+	<code>
+		<span class="comment">// [int] number of columns in the grid.</span>
+		<br><br>
+		<span class="param">@include</span> 
+		row-first(<span class="value">10</span>) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- row last -->
+<article id="row-last" data-name="row last">
+	<code>
+		<span class="comment">// [int] number of columns in the grid.</span>
+		<br><br>
+		<span class="param">@include</span> 
+		row-last(<span class="value">10</span>) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- unbalanced last -->
+<article id="unbalanced-last" data-name="unbalanced last">
+	<code>
+		<span class="comment">
+			/*<br>
+			[int] number of columns in the grid.
+			<br>
+			[string] optional - semantic grid element selector.
+			<br>*/
+		</span>
+		<br><br>
+		<span class="param">@include</span> 
+		unbalanced-last(<span class="value">10</span> [, '<span class="value">div</span>']) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<!-- index -->
+<article id="index" data-name="index">
+	<code>
+		<span class="comment">
+			/*<br>
+			1. [int] number of elements.
+			<br>
+			2. [string] optional - direction of sort : [forward / backward].
+			<br>
+			3. [int] optional - starting index for sorting.
+			<br>*/
+		</span>
+		<br><br>
+		<span class="param">@include</span> 
+		index(<span class="value">10</span> [, '<span class="value">forward</span>' [, <span class="value">0</span>]]) 
+		{ <span class="comment">...</span> }
+	</code>
+	<section>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</section>
+</article>
+
+<footer>
+	<span class="credit">Created by</span> <a href="https://blanks.by" class="logo"></a>
+</footer>
+
+</main>
+
+<script src="src/plugin/particles/particles.js"></script>
+<script>
+particlesJS.load('particles', 'src/plugin/particles/particles.json');
+</script>
+	
+</body>
+</html>

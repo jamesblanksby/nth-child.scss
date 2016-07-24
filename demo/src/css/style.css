@@ -1,0 +1,359 @@
+/* --------------------------------------------------------------------- IMPORT --- */
+/*!
+ * nth-child.scss
+ * A selection of helpful :nth-child recipes that makes 
+ * writing code faster and more readable.
+ * http://blanks.by/nth-child
+ * MIT License
+ * by James Blanksby
+ */
+/*!
+ * Target elements from the first to `$n`.
+ * @param {int} $n index of the child to select.
+ */
+/*!
+ * Target elements from the last to `$n`.
+ * @param {int} $n index of the child to select.
+ */
+/*!
+ * Target the first and last elements
+ */
+/*!
+ * Target every `$n`-th element.
+ * @param  {int} $n element multiple to select.
+ */
+/*!
+ * Target the first row of a balanced grid.
+ * @param {int} $n number of columns in the grid.
+ */
+/*!
+ * Target the last row of a balanced grid.
+ * @param {int} $n number of columns in the grid.
+ */
+/*!
+ * Target the last row of an unbalanced grid.
+ * @param  {int} $n         number of columns in the grid.
+ * @param  {int} $selector: ['div'] semantic grid element selector.
+ */
+/*!
+ * Sort element z-index in numerical order.
+ * @param  {int} 	$n          number of elements.
+ * @param  {string} $direction: ['forward'] direction of sort.
+ * @param  {int} 	$index:     [0] starting index for sorting.
+ */
+/* ----------------------------------------------------------------- BREAKPOINT --- */
+/* ----------------------------------------------------------------------- FONT --- */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,500);
+/* ---------------------------------------------------------------------- COLOR --- */
+/* ----------------------------------------------------------------------- BODY --- */
+body {
+  font-family: Circular Std, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  background-color: #3b434b;
+  -webkit-font-smoothing: antialiased; }
+
+/* ----------------------------------------------------------------------- MAIN --- */
+main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+/* -------------------------------------------------------------------- ARTICLE --- */
+article:before {
+  font-size: 19px;
+  display: block;
+  margin-bottom: 20px;
+  margin-left: 4px;
+  content: attr(data-name);
+  text-transform: capitalize;
+  color: white; }
+
+/* ----------------------------------------------------------------------- MONO --- */
+span.mono {
+  font-family: 'Roboto Mono';
+  font-weight: 500; }
+
+/* ----------------------------------------------------------------------- CODE --- */
+code {
+  font-family: 'Roboto Mono';
+  font-size: 15px;
+  display: block;
+  margin-bottom: 8px;
+  padding: 20px 20px 18px 20px;
+  color: white;
+  border-radius: 3px;
+  background-color: #3f4850; }
+  code span.param {
+    color: #a1acb4; }
+  code span.comment {
+    color: #6b7d8a; }
+  code span.value {
+    color: #21d7c8;
+    border-bottom: 1px dotted; }
+
+@media (max-width: 768px) {
+  code {
+    font-size: 13px; } }
+
+/* --------------------------------------------------------------------- BUTTON --- */
+.button {
+  font-size: 17px;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 300ms;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0); }
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.1); }
+
+/* -------------------------------------------------------------------- SECTION --- */
+section {
+  font-size: 0;
+  margin: 0 -4px 60px -4px; }
+  section .item {
+    position: relative;
+    display: inline-block;
+    width: calc(10% - 8px);
+    height: 50px;
+    margin: 0 4px;
+    counter-increment: step-counter;
+    border-radius: 3px;
+    background-color: #4a565f; }
+    section .item:before {
+      font-size: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: counter(step-counter);
+      transform: translate(-50%, -50%);
+      color: white; }
+
+/* --------------------------------------------------------------------- FOOTER --- */
+footer {
+  font-size: 15px;
+  margin-bottom: 20px;
+  text-align: center; }
+  footer .credit {
+    display: inline-block;
+    vertical-align: middle;
+    color: #a1acb4; }
+  footer a.logo {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    margin-left: 7px;
+    vertical-align: middle;
+    background: url("../gfx/b.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; }
+
+/* ----------------------------------------------------------------------- FORK --- */
+a.fork {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  display: block; }
+
+/* ----------------------------------------------------------------------- HERO --- */
+#hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 60px;
+  background-image: linear-gradient(#21d7c8, #1da8c1); }
+  #hero #particles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+  #hero .content {
+    font-size: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    max-width: 600px;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    #hero .content h1,
+    #hero .content p {
+      color: white; }
+    #hero .content h1 {
+      font-size: 42px; }
+    #hero .content p {
+      font-size: 22px;
+      margin-bottom: 50px;
+      color: rgba(255, 255, 255, 0.8); }
+      #hero .content p span.mono {
+        font-size: 20px; }
+    #hero .content a.button {
+      width: 160px;
+      margin: 0 10px; }
+      #hero .content a.button:before {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        content: '';
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-size: contain; }
+      #hero .content a.button.download span.mono {
+        font-size: 12px; }
+      #hero .content a.button.download:before {
+        margin-top: -5px;
+        background-image: url("../gfx/download.png"); }
+      #hero .content a.button.github:before {
+        margin-top: -5px;
+        background-image: url("../gfx/github.png"); }
+    @media (max-width: 768px) {
+      #hero .content a.button {
+        display: block;
+        margin: 0 auto; }
+        #hero .content a.button.download {
+          margin-bottom: 20px; } }
+
+/* ---------------------------------------------------------------------- USAGE --- */
+#usage {
+  font-size: 0;
+  margin-bottom: 60px; }
+  #usage .item {
+    display: inline-block;
+    width: calc(50% - 8px);
+    vertical-align: top; }
+    #usage .item:nth-child(-n + 1) {
+      margin-right: 8px; }
+    #usage .item:before {
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+      margin-left: 4px;
+      content: attr(data-name);
+      text-transform: capitalize;
+      color: #a1acb4; }
+  @media (max-width: 768px) {
+    #usage .item {
+      display: block;
+      width: 100%; }
+      #usage .item:nth-child(-n + 1) {
+        margin-bottom: 20px; } }
+
+/* ---------------------------------------------------------------------- FIRST --- */
+#first .item:nth-child(-n + 3) {
+  background-color: #21d7c8; }
+
+/* ----------------------------------------------------------------------- LAST --- */
+#last .item:nth-last-child(-n + 3) {
+  background-color: #21d7c8; }
+
+/* ----------------------------------------------------------------- FIRST LAST --- */
+#first-last .item:first-child, #first-last .item:last-child {
+  background-color: #21d7c8; }
+
+/* ---------------------------------------------------------------------- EVERY --- */
+#every .item:nth-child(3n) {
+  background-color: #21d7c8; }
+
+/* ------------------------------------------------------------------ ROW FIRST --- */
+#row-first .item:nth-child(-n + 10) {
+  margin-bottom: 8px;
+  background-color: #21d7c8; }
+
+/* ------------------------------------------------------------------- ROW LAST --- */
+#row-last .item:nth-last-child(-n + 10) {
+  margin-top: 8px;
+  background-color: #21d7c8; }
+
+/* ------------------------------------------------------------ UNBALANCED LAST --- */
+#unbalanced-last .item {
+  margin-bottom: 8px; }
+  #unbalanced-last .item:nth-child(10n + 1):nth-last-child(-n + 10) {
+    margin-bottom: 0;
+    background-color: #21d7c8; }
+    #unbalanced-last .item:nth-child(10n + 1):nth-last-child(-n + 10) ~ div {
+      margin-bottom: 0;
+      background-color: #21d7c8; }
+
+/* ---------------------------------------------------------------------- INDEX --- */
+#index section {
+  margin-right: 0;
+  margin-left: 0; }
+
+#index .item:nth-child(1) {
+  z-index: 1;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(2) {
+  z-index: 2;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(3) {
+  z-index: 3;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(4) {
+  z-index: 4;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(5) {
+  z-index: 5;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(6) {
+  z-index: 6;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(7) {
+  z-index: 7;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(8) {
+  z-index: 8;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(9) {
+  z-index: 9;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+
+#index .item:nth-child(10) {
+  z-index: 10;
+  width: calc(10% + 9px);
+  margin: 0 -10px 0 0;
+  background-color: #21d7c8;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
