@@ -1,0 +1,106 @@
+/*!
+ * nth-child.scss
+ * A selection of helpful :nth-child recipes that makes 
+ * writing code faster and more readable.
+ * http://blanks.by/nth-child
+ * MIT License
+ * by James Blanksby
+ */
+
+/*!
+ * Target elements from the first to `$n`.
+ * @param {int} $n index of the child to select.
+ */
+@mixin first($n) {
+	&:nth-child(-n + #{$n}) {
+		@content;
+	}
+}
+
+/*!
+ * Target elements from the last to `$n`.
+ * @param {int} $n index of the child to select.
+ */
+@mixin last($n) {
+	&:nth-last-child(-n + #{$n}) {
+		@content;
+	}
+}
+
+/*!
+ * Target the first and last elements
+ */
+@mixin first-last() {
+	&:first-child,
+	&:last-child {
+		@content;
+	}
+}
+
+/*!
+ * Target every `$n`-th element.
+ * @param  {int} $n element multiple to select.
+ */
+@mixin every($n) {
+	&:nth-child(#{$n}n) {
+		@content;
+	}
+}
+
+/*!
+ * Target the first row of a balanced grid.
+ * @param {int} $n number of columns in the grid.
+ */
+@mixin row-first($n) {
+	&:nth-child(-n + #{$n}) {
+		@content;
+	}
+}
+
+/*!
+ * Target the last row of a balanced grid.
+ * @param {int} $n number of columns in the grid.
+ */
+@mixin row-last($n) {
+	&:nth-last-child(-n + #{$n}) {
+		@content;
+	}
+}
+
+/*!
+ * Target the last row of an unbalanced grid.
+ * @param  {int} $n         number of columns in the grid.
+ * @param  {int} $selector: ['div'] semantic grid element selector.
+ */
+@mixin unbalanced-last($n, $selector: 'div') {
+	&:nth-child(#{$n}n + 1) {
+		&:nth-last-child(-n + #{$n}) {
+			@content;
+			& ~ #{$selector} {
+				@content;
+			}
+		}
+	}
+}
+
+/*!
+ * Sort element z-index in numerical order.
+ * @param  {int} 	$n          number of elements.
+ * @param  {string} $direction: ['forward'] direction of sort.
+ * @param  {int} 	$index:     [0] starting index for sorting.
+ */
+@mixin index($n, $direction: 'forward', $index: 0) {
+	@for $i from 1 through $n {
+		@if ($direction == 'forward') {
+			&:nth-child(#{$i}) {
+				z-index: ($index + $i);
+				@content;
+			}
+		} @else if ($direction == 'backward') {
+			&:nth-last-child(#{$i}) {
+				z-index: ($index + $i);
+				@content;
+			}
+		}
+	}
+}

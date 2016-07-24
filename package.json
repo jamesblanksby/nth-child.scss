@@ -1,0 +1,14 @@
+{
+	"name": "nth-child.scss",
+	"version": "0.0.1",
+	"description": "A selection of helpful :nth-child recipes that makes writing code faster and more readable.",
+	"author": "James Blanksby <james@blanks.by>",
+	"devDependencies": {
+		"node-sass": "^3.4.2",
+		"nodemon": "^1.9.1"
+	},
+	"scripts": {
+		"build-demo": "node-sass --include-path scss demo/src/scss/style.scss demo/src/css/style.css",
+		"watch-scss": "nodemon -e scss -x \"npm run build-demo\""
+	}
+}
